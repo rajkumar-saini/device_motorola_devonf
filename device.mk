@@ -422,3 +422,6 @@ PRODUCT_COPY_FILES += \
 # Inherit the proprietary files
 $(call inherit-product, vendor/motorola/devonf/devonf-vendor.mk)
 $(call inherit-product, vendor/motorola/devonf-motcamera/devonf-motcamera-vendor.mk)
+
+# Call the BCR setup
+$(call inherit-product-if-exists, vendor/bcr/bcr.mk)
