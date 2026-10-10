@@ -425,3 +425,8 @@ $(call inherit-product, vendor/motorola/devonf-motcamera/devonf-motcamera-vendor
 
 # Call the BCR setup
 $(call inherit-product-if-exists, vendor/bcr/bcr.mk)
+
+# Axion Kernel Manager
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/kernel/ax_kernel_manager_mt6855.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/ax_kernel_manager.xml \
+    $(LOCAL_PATH)/init/ax_init_mt6855.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/ax_init_mt6855.rc

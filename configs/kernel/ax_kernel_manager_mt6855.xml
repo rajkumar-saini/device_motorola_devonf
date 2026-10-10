@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kernel-manager>
+
+    <cpu
+        id="little"
+        group="Little CPU"
+        minId="axion_min_freq"
+        maxId="axion_max_freq"
+        governorId="little_cpu_governor"
+        minNode="/sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq"
+        maxNode="/sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq"
+        availablePath="/sys/devices/system/cpu/cpufreq/policy0/scaling_available_frequencies"
+        governorNode="/sys/devices/system/cpu/cpufreq/policy0/scaling_governor"
+        governorAvailablePath="/sys/devices/system/cpu/cpufreq/policy0/scaling_available_governors" />
+
+    <cpu
+        id="big"
+        group="Big CPU"
+        minId="axion_min_freq_big"
+        maxId="axion_max_freq_big"
+        governorId="big_cpu_governor"
+        minNode="/sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq"
+        maxNode="/sys/devices/system/cpu/cpufreq/policy6/scaling_max_freq"
+        availablePath="/sys/devices/system/cpu/cpufreq/policy6/scaling_available_frequencies"
+        governorNode="/sys/devices/system/cpu/cpufreq/policy6/scaling_governor"
+        governorAvailablePath="/sys/devices/system/cpu/cpufreq/policy6/scaling_available_governors" />
+
+    <!-- GPU: MediaTek, set by OPP index through /proc/gpufreqv2/fix_target_opp_index.
+         Enable only if the kernel manager supports index based nodes.
+    -->
+    <gpu
+        node="/proc/gpufreqv2"
+        currentNode="/sys/kernel/ged/hal/current_freqency"
+        usageNode="/sys/kernel/ged/hal/gpu_utilization"
+        frequencyMultiplier="1"
+        values="950000,943000,937000,931000,925000,918000,912000,906000,900000,885000,870000,855000,840000,825000,810000,795000,780000,765000,750000,735000,720000,705000,690000,675000,660000,637000,615000,592000,570000,547000,525000,502000,480000,457000,435000,412000,390000" />
+
+</kernel-manager>
